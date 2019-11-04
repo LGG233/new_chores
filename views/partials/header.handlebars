@@ -1,0 +1,153 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{{ title }}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top red-carpet">
+        <a class="navbar-brand" href="#">Get To It!</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                {{#if isAuthenticated}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/home">My Chores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Log out</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">New chore</a>
+                </li>
+                {{else}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Log in</a>
+                </li>
+                {{/if}}
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+</body>
+
+{{!-- <body>
+    <div class="jumbotron banner red-carpet text-center">
+        <h1 class="display-4">Chores</h1>
+        <h4 classs="lead">Better Get To It</h4>
+        <br>
+        {{!-- <button type="button" id="logout-btn" class="btn btn-primary btn-sm">Logout</button>
+        <button type="button" id="new-chore-btn" class="btn btn-primary btn-sm">Add New Chore</button> --}}
+<div class="row center-btns">
+    <button type="button" id="logout-btn" class="btn btn-primary btn-sm">Logout</button>
+    <button type="button" id="new-chore-btn" class="btn btn-primary btn-sm">Add New Chore</button>
+    <button type="button" id="login-btn" class="btn btn-primary btn-sm">Login</button>
+    <button type="button" id="register-btn" class="btn btn-primary btn-sm">Register</button>
+
+    {{!-- <button type="button" id="new-user-btn" class="btn btn-primary btn-sm">Add New User</button> --}}
+    {{!-- <button type="button" id="new-chore-btn" class="btn btn-primary btn-sm">Add New Chore</button> --}}
+    {{!-- <button type="button" class="user-chores btn btn-primary btn-sm" data-name="Dad">Dad's Chores</button>
+            <button type="button" class="user-chores btn btn-primary btn-sm" data-name="Maman">Maman's Chores</button>
+            <button type="button" class="user-chores btn btn-primary btn-sm" data-name="Rémi">Rémi's Chores</button>
+            <button type="button" class="user-chores btn btn-primary btn-sm" data-name="Juliette">Juliette's
+                Chores</button>
+            <button type="button" class="all-chores btn btn-primary btn-sm">All Chores</button> --}}
+</div>
+
+
+</div>
+<!-- Modal for New User -->
+// <div id="new-user-modal" class="modal fade" role="dialog" data-backdrop="static" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Register</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Input validation -->
+                <form id="new-user-modal-form" class="needs-validation" novalidate>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" placeholder="Please enter a username"
+                            required>
+                        <div class="invalid-feedback">
+                            Your username
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputChore">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="youremail@domain.com" required>
+                        <div class="invalid-feedback">
+                            Your email
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputDescription">Your password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Create a password">
+                        <div class="invalid-feedback">
+                            Password must be at least eight characters
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="passwordMatch">Re-enter password</label>
+                        <input type="password" class="form-control" id="passwordMatch" placeholder="Re-type password">
+                        <div class="invalid-feedback">
+                            Passwords must match
+                        </div>
+                    </div>
+                    {{!-- <button id="submitNewUser" type="submit" class="a btn btn-primary btn-block">Submit</button> --}}
+                </form>
+            </div>
+        </div>
+    </div>
+</div> //
+
+<!-- Modal for Login -->
+<div id="login-modal" class="modal fade" role="dialog" data-backdrop="static" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Login</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Input validation -->
+                <form id="login-modal-form" class="needs-validation" novalidate>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        {{!-- <input type="text" class="form-control" id="usernameL" placeholder="Enter your username"> --}}
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        {{!-- <input type="password" class="form-control" id="passwordL" placeholder="Enter password"> --}}
+                    </div>
+                    {{!-- <button id="loginUser" type="submit" class="btn btn-primary btn-block">Submit</button> --}}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body> --}}

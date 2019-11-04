@@ -1,0 +1,33 @@
+{{> header }}
+<div class="container">
+
+    <h1>{{title}}</h1>
+    <p></p>
+    <form id="new-chore" class="needs-validation" novalidate>
+        <div class="form-group">
+            <label for="inputUserName">Who</label>
+            <input type="text" class="form-control" id="inputUserName" placeholder="Who's gonna do the work" required>
+            <div class="invalid-feedback">
+                Please enter a name
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputChore">What</label>
+            <input type="text" class="form-control" id="inputChore" placeholder="What are they gonna do" required>
+            <div class="invalid-feedback">
+                Please enter the chore
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputDescription">How</label>
+            <input type="text" class="form-control" id="inputDescription" placeholder="Tell us about it">
+        </div>
+        <div class="form-group">
+            <label for="inputDate">When</label>
+            <input type="date" class="form-control" id="inputDate" placeholder="2019-01-01" required>
+            <div class="invalid-feedback">
+                Please enter a due date
+            </div>
+        </div>
+        <button id="submitNewChore" type="submit" class="btn btn-primary btn-block">Submit</button>
+    </form>

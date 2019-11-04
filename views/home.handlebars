@@ -1,0 +1,118 @@
+{{>header}}
+
+{{title}}
+<div class="main-buttons ">
+    <div class="container main-body">
+        <div class="row center-btns">
+            <button type="button" id="logout-btn" class="btn btn-primary btn-sm">Logout</button>
+            <button type="button" id="new-chore-btn" class="btn btn-primary btn-sm">Add New Chore</button>
+        </div>
+        {{>table-body}}
+        <br>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row"></div>
+    </div>
+</div>
+<!-- Modal for New Chore -->
+<div id="new-chore-modal" class="modal fade" role="dialog" data-backdrop="static" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">New Chore</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Input validation -->
+                <form id="new-chore-form" class="needs-validation" novalidate>
+                    <div class="form-group">
+                        <label for="inputUserName">Who</label>
+                        <input type="text" class="form-control" id="inputUserName" placeholder="Who's gonna do the work"
+                            required>
+                        <div class="invalid-feedback">
+                            Please enter a name
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputChore">What</label>
+                        <input type="text" class="form-control" id="inputChore" placeholder="What are they gonna do"
+                            required>
+                        <div class="invalid-feedback">
+                            Please enter the chore
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputDescription">How</label>
+                        <input type="text" class="form-control" id="inputDescription" placeholder="Tell us about it">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputDate">When</label>
+                        <input type="date" class="form-control" id="inputDate" placeholder="2019-01-01" required>
+                        <div class="invalid-feedback">
+                            Please enter a due date
+                        </div>
+                    </div>
+                    <button id="submitNewChore" type="submit" class="btn btn-primary btn-block">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Edited Chore -->
+<div id="edit-chore-modal" class="modal fade" role="dialog" data-backdrop="static" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Chore</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Input validation -->
+                <form id="sign-in-modal-form" class="needs-validation" novalidate>
+                    <div class="form-group">
+                        <label for="inputEditedUserName">Who</label>
+                        <input type="text" class="form-control" id="inputEditedUserName" required>
+                        <div class="invalid-feedback">
+                            Please enter a name - Dad, Maman, Rémi, or Juliette
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEditedChore">What</label>
+                        <input type="text" class="form-control" id="inputEditedChore"
+                            placeholder="What are they gonna do" required>
+                        <div class="invalid-feedback">
+                            Please enter the chore
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEditedDescription">How</label>
+                        <input type="text" class="form-control" id="inputEditedDescription"
+                            placeholder="Tell us about it">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEditedDate">When</label>
+                        <input type="date" class="form-control" id="inputEditedDate" placeholder="2019-01-01" required>
+                        <div class="invalid-feedback">
+                            Please enter a due date
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="choreID">Chore ID</label>
+                        <input type="text" class="form-control" id="choreID" required>
+                        <div class="invalid-feedback">
+                            Please re-enter the Chore ID
+                        </div>
+                    </div>
+                    <button id="submitEditedChore" type="submit" class="btn btn-primary btn-block">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

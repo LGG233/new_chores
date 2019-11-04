@@ -1,0 +1,13 @@
+.red-carpet {
+    background-color: crimson!important;
+    color: white;
+    /* z-index: 1; */
+}
+body {
+    background-image: url("../images/fikri-rasyid-786614-unsplash.jpg")
+}
+
+.white-text {
+    color: white;
+    text-shadow: 2px;
+}

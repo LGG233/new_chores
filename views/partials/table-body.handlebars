@@ -1,0 +1,63 @@
+<div class="container text-box" id="main-container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="menu-header text">To do:</h2>
+            <div class="row white-text">
+                <div class="col-md-2"><b>Who</b></div>
+                <div class="col-md-3"><b>What</b></div>
+                <div class="col-md-3"><b>Where</b></div>
+                <div class="col-md-4"><b>When</b></div>
+            </div>
+            <div id="handlebars-table">
+                {{#each Chores}}
+                {{#unless chore_state}}
+                <div class="row white-text">
+                    <div class="col-md-2">{{this.username}}</div>
+                    <div class="col-md-3">{{this.chore}}</div>
+                    <div class="col-md-3">{{this.overview}}</div>
+                    <div class="col-md-4">{{this.due_date}}
+                        <button type="button" class="change-status btn btn-primary btn-sm" data-id="{{this.chore_id}}"
+                            data-chorestate="{{this.chore_state}}">
+                            {{#if chore_state}}Redo{{else}}Done{{/if}}
+                        </button>
+                        <button type="button" class="edit-chore btn btn-primary btn-sm"
+                            data-id="{{this.chore_id}}">Edit</button>
+                        <button type="button" class="delete-chore btn btn-primary btn-sm"
+                            data-id="{{this.chore_id}}">X</button>
+                    </div>
+                </div>
+                {{/unless}}
+                {{/each}}
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <h2 class="menu-header text">Done:</h2>
+            <div class="row">
+                <div class="col-md-2"><b>Who</b></div>
+                <div class="col-md-3"><b>What</b></div>
+                <div class="col-md-3"><b>Where</b></div>
+                <div class="col-md-4"><b>When</b></div>
+            </div>
+            <div>
+                {{#each Chores}}
+                {{#if chore_state}}
+                <div class="row">
+                    <div class="col-md-2">{{this.username}}</div>
+                    <div class="col-md-3">{{this.chore}}</div>
+                    <div class="col-md-3">{{this.overview}}</div>
+                    <div class="col-md-4">{{this.due_date}}
+                        <button type="button" class="change-status btn btn-primary btn-sm" data-id="{{this.chore_id}}"
+                            data-chorestate="{{this.chore_state}}">
+                            {{#if chore_state}}Redo{{else}}Done{{/if}}
+                        </button>
+                        <button type="button" class="edit-chore btn btn-primary btn-sm"
+                            data-id="{{this.chore_id}}">Edit</button>
+                        <button type="button" class="delete-chore btn btn-primary btn-sm"
+                            data-id="{{this.chore_id}}">X</button></div>
+                </div>
+                {{/if}}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>

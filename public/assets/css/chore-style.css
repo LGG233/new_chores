@@ -1,0 +1,44 @@
+.red-carpet {
+    background-color: crimson!important;
+    color: white;
+}
+body {
+    background-image: url("../images/sweeping.jpg");
+    background-size: 100%;
+}
+.white-text {
+    color: white;
+    text-shadow: 10px;
+}
+.home-text {
+    color: white;
+    text-shadow: 10px;
+}
+.text-box {
+    background-color: blanchedalmond;
+    opacity: 0.80;
+}
+
+.center-btns {
+    display: block;
+    margin: auto auto 20px auto;
+    text-align: center;
+    padding: 4px;
+    font-size: 20px;
+}
+
+.main-body {
+    margin: auto;
+}
+
+.container {
+    color: white;
+}
+
+.row {
+    color: black;
+}
+
+#sign-up {
+    width: 450px
+}

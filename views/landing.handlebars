@@ -1,0 +1,82 @@
+{{!-- {{> header }}
+<div class="container home-text">
+
+    <h1>{{title}}</h1>
+    <p>Please login or register</p>
+
+    <button type="button" id="login-btn" class="btn btn-primary btn-sm">Login</button>
+    <button type="button" id="register-btn" class="btn btn-primary btn-sm">Register</button>
+</div>
+
+<!-- Modal for New User -->
+<div id="new-user-modal" class="modal fade" role="dialog" data-backdrop="static" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Register</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Input validation -->
+                <form id="new-user-modal-form" class="needs-validation" novalidate>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" placeholder="Please enter a username"
+                            required>
+                        <div class="invalid-feedback">
+                            Your username
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputChore">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="youremail@domain.com" required>
+                        <div class="invalid-feedback">
+                            Your email
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputDescription">Your password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Create a password">
+                        <div class="invalid-feedback">
+                            Password must be at least eight characters
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="passwordMatch">Re-enter password</label>
+                        <input type="password" class="form-control" id="passwordMatch" placeholder="Re-type password">
+                        <div class="invalid-feedback">
+                            Passwords must match
+                        </div>
+                    </div>
+                    <button id="submitNewUser" type="submit" class="btn btn-primary btn-block">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Login -->
+<div id="login-modal" class="modal fade" role="dialog" data-backdrop="static" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Login</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Input validation -->
+                <form id="login-modal-form" class="needs-validation" novalidate>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="usernameL" placeholder="Enter your username">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        {{!-- <input type="password" class="form-control" id="passwordL" placeholder="Enter password"> --}}
+</div>
+<button id="loginUser" type="submit" class="btn btn-primary btn-block">Submit</button>
+</form>
+</div>
+</div>
+</div>
+</div> --}}
